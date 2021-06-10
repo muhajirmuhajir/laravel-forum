@@ -1,0 +1,25 @@
+
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html
+  - source: scripts/apache
+    destination: /etc/apache2/sites-available
+file_exists_behavior: OVERWRITE
+hooks:
+  ApplicationStop:
+    - location: scripts/app_stop.sh
+      runas: root
+  BeforeInstall:
+    - location: scripts/cleanup_apache_conf.sh
+      runas: root
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 180
+      runas: root
+  ApplicationStart:
+    - location: scripts/app_start.sh
+      runas: root
+  ValidateService:
+    - location: scripts/health_check.sh
