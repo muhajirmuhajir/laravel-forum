@@ -2,6 +2,7 @@
 
 cd /var/www/html || exit 1
 chmod -R 777 storage
+chmod -R 777 /var/www/html/public/*
 
 composer install
 
