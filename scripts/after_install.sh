@@ -1,14 +1,25 @@
 #!/bin/bash
 
-cd /var/www/html || exit 1
+cd /var/www || exit 1
 chmod -R 777 storage
-chmod -R 777 /var/www/html/public/*
+
+rm -rf html
+
+ln -s /var/www/public /var/www/html
+
+chown -R www-data /var/www/html
 
 composer install
 
 # This needs to be created at buildtime via codebuild! And key:generate will no longer be necessary
 cp .env.example .env
 php artisan key:generate
+
+php artisan storage:link
+
+php artisan route:cache
+
+php artisan view:cache
 
 # Configure Apache configuration per environment
 sudo a2ensite prod
