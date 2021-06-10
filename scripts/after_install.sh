@@ -22,7 +22,7 @@ php artisan route:cache
 php artisan view:cache
 
 # Configure Apache configuration per environment
-sudo a2ensite prod
+# sudo a2ensite prod
 
 # if [ "${DEPLOYMENT_GROUP_NAME}" == "test-pipeline-codedeploy-group-prod" ]; then
 #   a2ensite prod

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm /etc/apache2/sites-available/*
+# rm /etc/apache2/sites-available/*

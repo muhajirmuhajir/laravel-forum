@@ -4,8 +4,8 @@ os: linux
 files:
   - source: /
     destination: /var/www
-  - source: scripts/apache
-    destination: /etc/apache2/sites-available
+  # - source: scripts/apache
+  #   destination: /etc/apache2/sites-available
 file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
