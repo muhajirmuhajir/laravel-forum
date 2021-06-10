@@ -428,7 +428,7 @@
 
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden text-center sm:rounded-lg">
                 <h1>Laravel Social Forum</h1>
-                <p>Sambat here...</p>
+                <p>Sambat Here bro...</p>
 
             </div>
 
